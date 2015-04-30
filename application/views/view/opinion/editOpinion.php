@@ -59,7 +59,7 @@ span{
 				</td>
 				<td style="font-size: 12px" valign="middle"
 					background="<?php echo base_url().'style/' ?>images/content-bg.gif">
-					<b>您当前位置：</b>观点管理中心>>审核观点
+					<b>您当前位置：</b>观点评论管理>>观点审核
 				</td>
 				<td width="17" valign="top"
 					background="<?php echo base_url().'style/' ?>images/main_rightbg.gif">
@@ -94,9 +94,10 @@ span{
 											<input type="hidden" name="create_time" value="<?php echo $opinion[0]['create_time'] ?>"/>
 											<input type="hidden" name="update_time" value="<?php echo $opinion[0]['update_time'] ?>"/>
 											
-											<input type="text" name="user_id" class="input-text lh30" size="40" value="<?php echo $opinion[0]['user_id']?>" />
+											<input type="text" name="user_name" class="input-text lh30" readonly="true"
+											       size="40" value="<?php echo $opinion[0]['user_name']?>" />
 												
-												<?php echo form_error('user_id','<span>','</span>')?>
+												<?php echo form_error('user_name','<span>','</span>')?>
 												
 											</td>
 											<td></td>
@@ -105,41 +106,38 @@ span{
 										<tr>
 											<td class="td_right fs">设备：</td>
 											<td class="">
-											<input type="text" name="device"
+											<input type="text" name="device" readonly="true"
 												class="input-text lh30" size="40" value="<?php echo $opinion[0]['device'] ?>" >
 											<?php echo form_error('device','<span>','</span>')?>
 											</td>
 											
 										</tr>
-										<tr>
-											<td class="td_right fs">审核状态：</td>
-											<td class="">
-											<input type="text" name="status"
-												class="input-text lh30" size="40" value="<?php echo $opinion[0]['status'] ?>" />
-											<?php echo form_error('status','<span>','</span>')?>
-											</td>
-											
-										</tr>
+										
 										<tr>
 											<td class="td_right fs">积分：</td>
 											<td class="">
-											<input type="text" name="score"
+											<input type="text" name="score" readonly="true"
 												class="input-text lh30" size="40" value="<?php echo $opinion[0]['score'] ?>" />
 											<?php echo form_error('score','<span>','</span>')?>
-											</td>
-											
+											</td>											
 										</tr>
+										
 										<tr>
 											<td class="td_right fs">评分：</td>
 											<td class="">
-											<input type="text" name="stars"
+											<input type="text" name="stars" readonly="true"
 												class="input-text lh30" size="40" value="<?php echo $opinion[0]['stars'] ?>" />
 											<?php echo form_error('stars','<span>','</span>')?>
-											</td>
-											
+											</td>											
 										</tr>
 										
-										
+										<tr>
+									       <td class="td_right fs">审核状态：</td>
+									       <td class="fs">
+									       <input type="radio" name="status" value="0" <?php if(0==$opinion[0]['status']) echo set_radio('status','0', TRUE); else echo set_radio('status','0')?>/> 未审核&nbsp;&nbsp;&nbsp;&nbsp;
+									       <input type="radio" name="status" value="1" <?php if(1==$opinion[0]['status']) echo set_radio('status','1', TRUE); else echo set_radio('status','1')?>/> 已审核
+									       </td>
+								       </tr>										
 										
 								<tr>
 									<td class="td_right fs">观点：</td>

@@ -1,5 +1,5 @@
 
-<title>欧孚网站后台登陆界面</title>
+<title>丁盯后台管理系统</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <style type="text/css">
 <!--
@@ -118,7 +118,7 @@ window.attachEvent("onload", correctPNG);
 								border="0" align="center" cellpadding="0" cellspacing="0">
 								<tr>
 									<td width="4%">&nbsp;</td>
-									<td width="96%" height="38"><span class="login_txt_bt">欧孚留学后台管理系统</span></td>
+									<td width="96%" height="38"><span class="login_txt_bt">丁盯后台管理系统</span></td>
 								</tr>
 								<tr>
 									<td>&nbsp;</td>

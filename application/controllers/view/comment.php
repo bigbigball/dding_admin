@@ -1,33 +1,28 @@
 <?php
 if (! defined ( 'BASEPATH' ))
 	exit ( 'No direct script access allowed' );
-class AppTip extends MY_Controller {
+class Comment extends MY_Controller {
 	/**
 	 * 构造函数
 	 */
 	public function __construct() {
 		parent::__construct ();
-		$this->load->model ( 'apptip_model', 'app' );
-	}
-	public function addTip() {
-		$this->load->helper ( 'form' );
-		$this->load->view ( 'apply/applytip/addAppTip' );
+		$this->load->model ( 'comment_model', 'comment' );
 	}
 	
-	// 显示留学申请资讯列表
-	public function appTipList() {
-	    
+	
+	// 显示评论列表
+	public function commentList() {
 	    //后台设置后缀为空，否则分页出错
 	    $this->config->set_item('url_suffix', '');
 	    //载入分页类
 	    $this->load->library('pagination');
 	    //每页显示数量
-	    $perPage = 4;
+	    $perPage = 1;
 	    
 	    //配置项设置
-	    //controller的url
-	    $config['base_url'] = site_url('apply/appTip/appTipList');
-	    $config['total_rows'] = $this->db->count_all_results('applytip');
+	    $config['base_url'] = site_url('view/comment/commentList');
+	    $config['total_rows'] = $this->db->count_all_results('comment');
 	    $config['per_page'] = $perPage;
 	    $config['uri_segment'] = 4;
 	    $config['first_link'] = '首页';
@@ -38,103 +33,103 @@ class AppTip extends MY_Controller {
 	    $this->pagination->initialize($config);
 	    
 	    $data['links'] = $this->pagination->create_links();
-	    //p($data);die;
 	    $offset = $this->uri->segment(4);
 	    $this->db->limit($perPage, $offset);
 	    
-		$data ['applytip'] = $this->app->appTipList ();
-		$this->load->view ( 'apply/applytip/appTipList', $data );
+		$comment = $this->comment->commentList ();
+		
+		foreach($comment as &$v){//编号转文本
+			/*
+			if(0 == $v['device']) $v['device'] = "丁盯指纹锁";
+				else if(1 == $v['device']) $v['device'] = "丁盯门磁";
+					else if(2 == $v['device']) $v['device'] = "丁盯密码锁";
+						else $v['device'] = "未知设备";
+			*/
+			if(0 == $v['status']) $v['status'] = "未审核";
+				else if(1 == $v['status']) $v['status'] = "已审核";
+					else $v['status'] = "状态未知";	
+		}
+		
+		$data ['comment'] = $comment;
+		$this->load->view ( 'view/comment/commentList', $data );
 	}
 	
-	// 添加文章
-	public function addArticle() {
-		
-		// 载入表单验证类
-		$this->load->library ( 'form_validation' );
-		// 设置验证
-		/*
-		 * $this->form_validation->set_rules('title', '文章标题不为空', 'required|min_length[5]'); $this->form_validation->set_rules('author', '作者不为空', 'required'); $this->form_validation->set_rules('type', '类型不为空', 'required'); $this->form_validation->set_rules('desc', '摘要不为空', 'required|max_length[10]'); $this->form_validation->set_rules('content', '内容不为空', 'required');
-		 */
-		// 执行验证
-		$status = $this->form_validation->run ( 'applytip' );
-		
-		if ($status) {
-			// 操作model层
-			$data = array (
-					'title' => $this->input->post ( 'title' ),
-					'author' => $this->input->post ( 'author' ),
-					'ctime' => time(),
-					'type' => $this->input->post ( 'type' ),
-					'position' => $this->input->post ( 'position' ),
-					'source' => $this->input->post ( 'source' ),
-					'status' => $this->input->post ( 'status' ),
-					'desc' => $this->input->post ( 'desc' ),
-					'content' => $this->input->post ( 'content' ) 
-			);
-			
-			$this->app->addAppTip ( $data );
-			success ( 'apply/appTip/appTipList', '留学资讯添加成功！' );
-		} else {
-			// 重载
-			$this->load->helper ( 'form' );
-			$this->load->view ( 'apply/applytip/addAppTip' );
-		}
-	}
-	// 编辑文章
-	public function editTip() {
+	
+	// 编辑观点
+	public function editComment() {
 		$id = $this->uri->segment ( 4 );
 		
-		$data ['applytip'] = $this->app->checkAppTip ( $id );
+		$comment = $this->comment->checkComment ( $id );
 		
+		/*
+		foreach($opinion as &$v){//编号转文本
+			if(0 == $v['device']) $v['device'] = "丁盯指纹锁";
+				else if(1 == $v['device']) $v['device'] = "丁盯门磁";
+					else if(2 == $v['device']) $v['device'] = "丁盯密码锁";
+						else $v['device'] = "未知设备";
+		}
+		*/
+		
+		$data ['comment'] = $comment;
 		$this->load->helper ( 'form' );
-		$this->load->view ( 'apply/applytip/editAppTip', $data );
+		$this->load->view ( 'view/comment/editComment', $data );
 	}
+	
 	// 编辑动作
 	public function editArticle() {
 		// 载入表单验证类
 		$this->load->library ( 'form_validation' );
 		// 执行验证
-		$status = $this->form_validation->run ( 'applytip' );
+		$status = $this->form_validation->run ( 'comment' );
 		
 		if ($status) {
 			$id = $this->input->post ( 'id' );
 			
-			$title = $this->input->post ( 'title' );
-			$author = $this->input->post ( 'author' );
-			$ctime = $this->input->post ( 'ctime' );
-			$type = $this->input->post ( 'type' );
-			$position = $this->input->post ( 'position' );
-			$source = $this->input->post ( 'source' );
 			$status = $this->input->post ( 'status' );
-			$desc = $this->input->post ( 'desc' );
-			$content = $this->input->post ( 'content' );
+			$view = $this->input->post ( 'content' );
+			//$update_time = time();
 			
 			$data = array (
-					'title' => $title,
-					'author' => $author,
-					'ctime' => $ctime,
-					'type' => $type,
-					'position' => $position,
-					'source' => $source,
 					'status' => $status,
-					'desc' => $desc,
-					'content' => $content 
+					'content' => $view,
+				//	'update_time' => $update_time 
 			);
 			
-			$data ['applytip'] = $this->app->updateAppTip ( $id, $data );
-			success ( 'apply/appTip/appTipList', '留学资讯修改成功！' );
+			$data ['comment'] = $this->comment->updateComment ( $id, $data );
+			success ( 'view/comment/commentList', '评论修改成功！' );
 		} else {
 			// 重载
+			$id = $this->input->post ( 'id' );
+			$opinion_id = $this->input->post ( 'opinion_id' );
+			$owner_id = $this->input->post ( 'owner_id' );
+			$target_id = $this->input->post ( 'target_id' );
+			$status = $this->input->post ( 'status' );
+			$content = $this->input->post ( 'content' );
+			$create_time = $this->input->post ( 'create_time' );
+			//$update_time = $this->input->post ( 'update_time' );
+				
+			$comment = array (
+					'id' => $id,
+					'opinion_id' => $opinion_id,
+					'owner_id' => $owner_id,
+					'target_id' => $target_id,
+					'status' => $status,
+					'content' => $content,
+					'create_time' => $create_time,
+					//'update_time' => $update_time
+			);
+			
+			$data ['comment'][0] = $comment;
 			$this->load->helper ( 'form' );
-			$this->load->view ( 'apply/applytip/editAppTip' );
+			$this->load->view ( 'view/comment/editComment', $data);
 		}
 	}
-	// 删除留学资讯
 	
-	public function delTip() {
+	// 删除观点	
+	public function delComment() {
 		$id = $this->uri->segment ( 4 );
 	
-		$this->app->delAppTip ( $id );
-		success ( 'apply/appTip/appTipList', '留学资讯删除成功！' );
+		$this->comment->delComment ( $id );
+		success ( 'view/comment/commentList', '观点删除成功！' );
 	}
 }

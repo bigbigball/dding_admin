@@ -61,7 +61,7 @@
 				</td>
 				<td style="font-size: 12px" valign="middle"
 					background="<?php echo base_url().'style/' ?>images/content-bg.gif">
-					<b>您当前位置：</b>观点管理中心>>观点列表
+					<b>您当前位置：</b>观点评论管理>>观点列表
 				</td>
 				<td width="17" valign="top"
 					background="<?php echo base_url().'style/' ?>images/main_rightbg.gif">
@@ -87,23 +87,23 @@
 								class="list_table fs">
 								<tr>
 									
-									<th width="300">用户名</th>
-									<th width="100">设备</th>
-									<th width="100">审核状态</th>
+									<th width="220">用户名</th>
+									<th width="130">设备</th>
 									<th width="100">积分</th>
-									<th width="180">评分</th>
-									<th width="180">观点时间</th>
+									<th width="100">评分</th>
+									<th width="150">发表时间</th>
+									<th width="180">审核状态</th>
 									<th>操作</th>
 								</tr>
 								<?php foreach ($opinion as $v): ?>
 								<tr class="tr">
 									
-									<td class="td_center"><?php echo $v['user_id']?></td>
-									<td class="td_center"><?php echo $v['device']?></td>
-									<td class="td_center"><?php echo $v['status']?></td>
+									<td class="td_center"><?php echo $v['user_name']?></td>
+									<td class="td_center"><?php echo $v['device']?></td>									
 									<td class="td_center"><?php echo $v['score']?></td>
 									<td class="td_center"><?php echo $v['stars']?></td>
 									<td class="td_center"><?php echo date('m-d-y', $v['create_time'])?></td>
+									<td class="td_center"><?php echo $v['status']?></td>
 									<td class="td_center">
 									【<a class="link-update" href="<?php echo site_url().'/view/opinion/editOpinion/'.$v['id'] ?>">审核</a>】
 									&nbsp;&nbsp;&nbsp;&nbsp;

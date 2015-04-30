@@ -79,8 +79,6 @@ span{
 					background="<?php echo base_url().'style/' ?>images/main_leftbg.gif">&nbsp;</td>
 				<td valign="top" bgcolor="#F7F8F9">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
-
-						
 							<tr>
 								<td colspan="4">
 								<form action="<?php echo site_url('user/user/editArticle') ?>" class="jqtransform" method="POST"  enctype="multipart/form-data" >
@@ -96,63 +94,50 @@ span{
 												<?php echo form_error('user_name','<span>','</span>')?>
 												
 											</td>
-											<td></td>
-											
+											<td></td>											
 										</tr>
+										
 										<tr>
-											<td class="td_right fs">昵称：</td>
-											<td class="">
-											<input type="text" name="nick_name"
-												class="input-text lh30" size="40" value="<?php echo $user[0]['nick_name'] ?>" >
-											<?php echo form_error('nick_name','<span>','</span>')?>
+											<td class="td_right fs">是否意见领袖：</td>
+											<td class="fs">
+											<?php echo $user[0]['is_leader']?>
+									          <input type="radio" name="is_leader" value="1" <?php if(1==$user[0]['is_leader']) echo set_radio('is_leader','1', TRUE); else echo set_radio('is_leader','1')?>/> 是&nbsp;&nbsp;&nbsp;&nbsp;
+									          <input type="radio" name="is_leader" value="0" <?php if(0==$user[0]['is_leader']) echo set_radio('is_leader','0', TRUE); else echo set_radio('is_leader','0')?>/> 否
+									        </td>
+						
+										</tr>
+										
+										<tr>
+											<td class="td_right fs">用户积分：</td>
+											<td class=""><input type="text" name="integral"
+												class="input-text lh30" size="40" value="<?php echo $user[0]['integral'] ?> ">	
+											    <?php echo form_error('integral','<span>','</span>')?>
 											</td>
-											
 										</tr>
+							
 										<tr>
-											<td class="td_right fs">电话：</td>
+											<td class="td_right fs">联系电话：</td>
 											<td class="">
 											<input type="text" name="mobile"
 												class="input-text lh30" size="40" value="<?php echo $user[0]['mobile'] ?>" />
 											<?php echo form_error('mobile','<span>','</span>')?>
-											</td>
-											
+											</td>											
 										</tr>
-										<tr>
-											<td class="td_right fs">头像：</td>
-											<td class="">
-											<input type="text" name="photo"
-												class="input-text lh30" size="40" value="<?php echo $user[0]['photo'] ?>" />
-											
-											</td>
-											
-										</tr>
+								
 								       <tr>
-									       <td class="td_right fs">描述：</td>
-									       <td class=""><input type="text" name="brief"
-												class="input-text lh30" size="40"  value="<?php echo $user[0]['brief'] ?>" /></td>
+									       <td class="td_right fs">个人描述：</td>
+									       <td class=""><textarea name="brief" rows="8" cols="15"
+											   class="textarea"><?php echo $user[0]['brief'] ?></textarea>
+											   <br>
+											   <?php echo form_error('brief','<span>','</span>')?>	
+										   </td>
 								       </tr>
-										<tr>
-											<td class="td_right fs">积分：</td>
-											<td class=""><input type="text" name="integral"
-												class="input-text lh30" size="40" value="<?php echo $user[0]['integral'] ?> "></td>
-											
-										</tr>
-									<tr>
-											<td class="td_right fs">是否是意见领袖：</td>
-											<td class=""><input type="text" name="is_leader"
-												class="input-text lh30" size="40" value="<?php echo $user[0]['is_leader'] ?> "></td>
-											
-										</tr>
-								       
-										
 								
 								<tr>
 									<td class="td_right">&nbsp;</td>
 									<td class="">
 									
-									<input type="submit" name="button" class="btn btn82 btn_save2 fs" value="修改"> 
-										
-									<input type="reset" name="button" class="btn btn82 btn_res fs" value="重置">
+									<input type="submit" name="button" class="btn btn82 btn_save2 fs" value="修改">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<a href="<?php echo site_url().'/user/user/userList'; ?>">
 									<input type="button" name="button" class="btn btn82 btn_config fs" value="返回">
 									</a>

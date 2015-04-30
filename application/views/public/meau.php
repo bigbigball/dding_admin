@@ -23,37 +23,7 @@ body {
 <table width="100%" height="280" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEF2FB">
   <tr>
     <td width="182" valign="top"><div id="container">
-      <h1 class="type"><a href="javascript:void(0)">留学申请管理</a></h1>
-      <div class="content">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td><img src="<?php echo base_url().'style/' ?>images/menu_topline.gif" width="182" height="5" /></td>
-          </tr>
-        </table>
-        <ul class="MM">
-          <li><a href="<?php echo site_url().'/apply/appTip/appTipList'; ?>" target="main">留学资讯</a></li>
-          
-        </ul>
-      </div>
-      <h1 class="type"><a href="javascript:void(0)">文书写作管理</a></h1>
-      <div class="content">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td><img src="<?php echo base_url().'style/' ?>images/menu_topline.gif" width="182" height="5" /></td>
-          </tr>
-        </table>
-        <ul class="MM">
-          <li><a href="<?php echo site_url().'/eassy/eassyExa/eassyExaList'; ?>" target="main">文书案例</a></li>
-          
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
-        </ul>
-      </div>
-      
-      <h1 class="type"><a href="javascript:void(0)">观点中心管理</a></h1>
+      <h1 class="type"><a href="javascript:void(0)">观点评论管理</a></h1>
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
@@ -63,12 +33,9 @@ body {
         <ul class="MM">
           
           <li><a href="<?php echo site_url().'/view/opinion/opinionList'; ?>" target="main">观点管理</a></li>
-          <li><a href="" target="main">评论管理</a></li>
+          <!--  --li><a href="<?php echo site_url().'/view/comment/commentList'; ?>" target="main">评论管理</a></li-->
           <li></li>
           <li></li>
-          <li></li>
-          <li></li>
-
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">用户中心管理</a></h1>
@@ -78,15 +45,11 @@ body {
             <td><img src="<?php echo base_url().'style/' ?>images/menu_topline.gif" width="182" height="5" /></td>
           </tr>
         </table>
-        <ul class="MM">
-          
+        <ul class="MM">    
           <li><a href="<?php echo site_url().'/user/user/userList'; ?>" target="main">用户管理</a></li>
-          <li><a href="" target="main">积分管理</a></li>
+          <!--  --li><a href="" target="main">积分管理</a></li-->
           <li></li>
           <li></li>
-          <li></li>
-          <li></li>
-
         </ul>
       </div>
    
@@ -98,10 +61,8 @@ body {
             </tr>
           </table>
         <ul class="MM">
-            <li><a href="http://www.mycodes.net" target="main">系统参数</a></li>
+          <!--li><a href="http://www.mycodes.net" target="main">系统参数</a></li-->
           <li><a href="<?php echo site_url().'/sysconfig/sysconfig/modifyPass'; ?>" target="main">修改密码</a></li>
-          <li></li>
-          <li></li>
           <li></li>
           <li></li>
         </ul>

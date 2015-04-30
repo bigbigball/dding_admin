@@ -9,14 +9,26 @@ class Opinion_model extends CI_Model{
 	}
 	//全部查询
 	public function opinionList(){
-	    //添加查询条件，降序
-	    $this->db->order_by('id','DESC');
-		$data = $this->db->get('opinion')->result_array();
+	    //联合opinion和user表
+		$data = $this->db->select('o.id, u.user_name, o.device, o.pictures, o.score, o.stars, o.view, 
+				                  o.status, o.create_time, o.update_time')->from('opinion as o')
+				        ->join('user as u', 'o.user_id = u.id')->order_by('o.id', 'desc')->get()->result_array();
 		return $data;
 	}
 	//条件查询
 	public function checkOpinion($id){
-		$data = $this->db->where(array('id'=>$id))->get('opinion')->result_array();
+		//$data = $this->db->where(array('id'=>$id))->get('opinion')->result_array();
+		
+		$data = $this->db->select('o.id, u.user_name, o.device, o.pictures, o.score, o.stars, o.view,
+				                  o.status, o.create_time, o.update_time')->from('opinion as o')
+				         ->where(array('o.id'=>$id))->join('user as u', 'o.user_id = u.id')
+		                 ->get()->result_array();
+		/*
+		$data = $this->db->select('o.id, u.user_name, o.device, o.pictures, o.score, o.stars, o.view,
+				                  o.status, o.create_time, o.update_time')
+				         ->from('(select * from opinion where id = '.$id.') as o')
+				         ->join('user as u', 'o.user_id = u.id', 'left')
+		                 ->get()->result_array();*/
 		return $data;
 	}
 	

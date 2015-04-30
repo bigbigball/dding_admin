@@ -18,7 +18,7 @@ class Opinion extends MY_Controller {
 	    //载入分页类
 	    $this->load->library('pagination');
 	    //每页显示数量
-	    $perPage = 1;
+	    $perPage = 10;
 	    
 	    //配置项设置
 	    $config['base_url'] = site_url('view/opinion/opinionList');
@@ -45,7 +45,7 @@ class Opinion extends MY_Controller {
 						else $v['device'] = "未知设备";
 			if(0 == $v['status']) $v['status'] = "未审核";
 				else if(1 == $v['status']) $v['status'] = "已审核";
-					else $v['status'] = "状态未知";	
+					else $v['status'] = "状态未知";
 		}
 		
 		$data ['opinion'] = $opinion;

@@ -87,10 +87,10 @@
 								class="list_table fs">
 								<tr>
 									
-									<th width="220">用户名</th>
-									<th width="130">设备</th>
-									<th width="100">积分</th>
-									<th width="100">评分</th>
+									<th width="300">用户观点</th>
+									<th width="130">点评设备</th>
+									<th width="100">综合评分</th>
+									<th width="100">各项评分</th>
 									<th width="150">发表时间</th>
 									<th width="180">审核状态</th>
 									<th>操作</th>
@@ -98,7 +98,11 @@
 								<?php foreach ($opinion as $v): ?>
 								<tr class="tr">
 									
-									<td class="td_center"><?php echo $v['user_name']?></td>
+									<td class="td_center"><a href="<?php echo site_url().'/view/opinion/editOpinion/'.$v['id'] ?>">
+									                      <?php $view_str=mb_substr(strip_tags($v['view']),0,20); 
+									                            if(mb_strlen($view_str)>19) $view_str .= "...";
+									                            echo $view_str;?></a>
+									</td>
 									<td class="td_center"><?php echo $v['device']?></td>									
 									<td class="td_center"><?php echo $v['score']?></td>
 									<td class="td_center"><?php echo $v['stars']?></td>

@@ -100,12 +100,16 @@ window.attachEvent("onload", correctPNG);
 															<td>&nbsp;</td>
 															<td width="30%" height="40"><img
 																src="<?php echo base_url().'style/' ?>images/icon-demo.gif"
-																width="16" height="16"><a href="http://www.mycodes.net"
-																target="_blank" class="left_txt3"> 使用说明</a></td>
+																width="16" height="16"><!--a href="http://www.mycodes.net"
+																target="_blank" class="left_txt3"> 使用说明</a-->
+																<a href="#" class="left_txt3"> 使用说明</a>
+																</td>
 															<td width="35%"><img
 																src="<?php echo base_url().'style/' ?>images/icon-login-seaver.gif"
-																width="16" height="16"><a href="http://www.mycodes.net"
-																class="left_txt3"> 在线客服</a></td>
+																width="16" height="16"><!--a href="http://www.mycodes.net"
+																class="left_txt3"> 在线客服</a-->
+																<a href="#" class="left_txt3"> 在线客服</a>
+																</td>
 														</tr>
 													</table></td>
 											</tr>

@@ -89,18 +89,19 @@
 								<tr>
 									
 									<th width="300">用户名</th>
-									<th width="100">电话</th>
-									<th width="100">积分</th>
 									<th width="180">是否意见领袖</th>
+									<th width="150">用户积分</th>
+									<th width="180">联系电话</th>								
 									<th>操作</th>
 								</tr>
 								<?php foreach ($user as $v): ?>
 								<tr class="tr">
 									
 									<td class="td_center"><a href="<?php echo site_url().'/user/user/editUser/'.$v['id'] ?>"><?php echo $v['user_name']?></a></td>
-									<td class="td_center"><?php echo $v['mobile']?></td>
-									<td class="td_center"><?php echo $v['integral']?></td>
 									<td class="td_center"><?php echo $v['is_leader']?></td>
+									<td class="td_center"><?php echo $v['integral']?></td>
+									<td class="td_center"><?php echo $v['mobile']?></td>						
+									
 									<td class="td_center">
 									【<a class="link-update" href="<?php echo site_url().'/user/user/editUser/'.$v['id'] ?>">修改</a>】
 									&nbsp;&nbsp;&nbsp;&nbsp;

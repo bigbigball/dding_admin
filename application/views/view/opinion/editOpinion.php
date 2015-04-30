@@ -40,7 +40,7 @@ span{
 	    window.UEDITOR_CONFIG.UEDITOR_HOME_URL = '<?php echo base_url().'style/' ?>ueditor/'; 
 	    window.onload = function(){
 	    	window.UEDITOR_CONFIG.initialFrameWidth = 800;
-	    	window.UEDITOR_CONFIG.initialFrameHeight = 320;
+	    	window.UEDITOR_CONFIG.initialFrameHeight = 250;
 	    	UE.getEditor('view');  
 	    }
 	</script>
@@ -87,26 +87,26 @@ span{
 									<table class="form_table pt15 pb15" width="100%" border="0"
 										cellpadding="0" cellspacing="0">
 										<tr>
-											<td class="td_right fs">用户：</td>
+											<td class="td_right fs">用户名：</td>
 											<td class="">
 											<input type="hidden" name="id" value="<?php echo $opinion[0]['id'] ?>"/>
 											<input type="hidden" name="pictures" value="<?php echo $opinion[0]['pictures'] ?>"/>
 											<input type="hidden" name="create_time" value="<?php echo $opinion[0]['create_time'] ?>"/>
 											<input type="hidden" name="update_time" value="<?php echo $opinion[0]['update_time'] ?>"/>
 											
-											<input type="text" name="user_name" class="input-text lh30" readonly="true"
+											<input type="text" name="user_name" class="input-text lh30" readonly
 											       size="40" value="<?php echo $opinion[0]['user_name']?>" />
 												
-												<?php echo form_error('user_name','<span>','</span>')?>
-												
+												<?php echo form_error('user_name','<span>','</span>')?>	
+											
 											</td>
 											<td></td>
 											
 										</tr>
 										<tr>
-											<td class="td_right fs">设备：</td>
+											<td class="td_right fs">点评设备：</td>
 											<td class="">
-											<input type="text" name="device" readonly="true"
+											<input type="text" name="device" readonly
 												class="input-text lh30" size="40" value="<?php echo $opinion[0]['device'] ?>" >
 											<?php echo form_error('device','<span>','</span>')?>
 											</td>
@@ -114,22 +114,22 @@ span{
 										</tr>
 										
 										<tr>
-											<td class="td_right fs">积分：</td>
+											<td class="td_right fs">各项评分：</td>
 											<td class="">
-											<input type="text" name="score" readonly="true"
-												class="input-text lh30" size="40" value="<?php echo $opinion[0]['score'] ?>" />
-											<?php echo form_error('score','<span>','</span>')?>
+											<input type="text" name="stars" readonly
+												class="input-text lh30" size="40" value="<?php echo $opinion[0]['stars']."（外观，稳定性，智能，功耗）" ?>" />
+											<?php echo form_error('stars','<span>','</span>')?>
 											</td>											
 										</tr>
 										
 										<tr>
-											<td class="td_right fs">评分：</td>
+											<td class="td_right fs">综合评分：</td>
 											<td class="">
-											<input type="text" name="stars" readonly="true"
-												class="input-text lh30" size="40" value="<?php echo $opinion[0]['stars'] ?>" />
-											<?php echo form_error('stars','<span>','</span>')?>
+											<input type="text" name="score" readonly
+												class="input-text lh30" size="40" value="<?php echo $opinion[0]['score'] ?>" />
+											<?php echo form_error('score','<span>','</span>')?>
 											</td>											
-										</tr>
+										</tr>								
 										
 										<tr>
 									       <td class="td_right fs">审核状态：</td>
@@ -137,7 +137,7 @@ span{
 									       <input type="radio" name="status" value="0" <?php if(0==$opinion[0]['status']) echo set_radio('status','0', TRUE); else echo set_radio('status','0')?>/> 未审核&nbsp;&nbsp;&nbsp;&nbsp;
 									       <input type="radio" name="status" value="1" <?php if(1==$opinion[0]['status']) echo set_radio('status','1', TRUE); else echo set_radio('status','1')?>/> 已审核
 									       </td>
-								       </tr>										
+								       </tr>															
 										
 								<tr>
 									<td class="td_right fs">观点：</td>
@@ -145,21 +145,20 @@ span{
 											class="textarea"><?php echo $opinion[0]['view'] ?></textarea>
 											<?php echo form_error('view','<span>','</span>')?>
 											</td>
-								</tr>
-								
+								</tr>						
+								       
 								<tr>
 									<td class="td_right">&nbsp;</td>
 									<td class="">
 									
 									<input type="submit" name="button" class="btn btn82 btn_save2 fs" value="修改"> 
 										
-									<input type="reset" name="button" class="btn btn82 btn_res fs" value="重置">
+									&nbsp;&nbsp;&nbsp;
 									<a href="<?php echo site_url().'/view/opinion/opinionList'; ?>">
 									<input type="button" name="button" class="btn btn82 btn_config fs" value="返回">
 									</a>
 									</td>
-								</tr>
-								
+								</tr>						
 								
 									</table>
 									</form>

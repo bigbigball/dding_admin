@@ -88,19 +88,18 @@ span{
 											<td class="td_right fs">用户名：</td>
 											<td class="">
 											<input type="hidden" name="id" value="<?php echo $user[0]['id'] ?>"/>
+											<input type="hidden" name="photo" value="<?php echo $user[0]['photo'] ?>"/>
 											
 											<input type="text" name="user_name" class="input-text lh30" size="40" value="<?php echo $user[0]['user_name']?>" />
 												
 												<?php echo form_error('user_name','<span>','</span>')?>
 												
-											</td>
-											<td></td>											
+											</td>										
 										</tr>
 										
 										<tr>
 											<td class="td_right fs">是否意见领袖：</td>
 											<td class="fs">
-											<?php echo $user[0]['is_leader']?>
 									          <input type="radio" name="is_leader" value="1" <?php if(1==$user[0]['is_leader']) echo set_radio('is_leader','1', TRUE); else echo set_radio('is_leader','1')?>/> 是&nbsp;&nbsp;&nbsp;&nbsp;
 									          <input type="radio" name="is_leader" value="0" <?php if(0==$user[0]['is_leader']) echo set_radio('is_leader','0', TRUE); else echo set_radio('is_leader','0')?>/> 否
 									        </td>

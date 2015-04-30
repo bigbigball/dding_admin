@@ -46,12 +46,12 @@ body {
 					<tr>
 						<td colspan="2" valign="top"><span class="left_bt">
 						欢迎使用丁盯后台管理系统
-						</span><br> <br> <span class="left_txt">&nbsp;<img
+						<!--/span><br> <br> <span class="left_txt">&nbsp;<img
 								src="<?php echo base_url().'style/' ?>images/ts.gif" width="16"
 								height="16"> 提示：<br>
 								
 					
-						</span></td>
+						</span--></td>
 						<td width="7%">&nbsp;</td>
 						<td width="40%" valign="top">
 						</td>
@@ -62,23 +62,24 @@ body {
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
-						<td colspan="2" valign="top">
+						<!--td colspan="2" valign="top">
 							<img alt="" src="<?php echo base_url().'style/' ?>images/welcome1.png">
 							<br/><br/><br/><br/>
-						</td>
-						<td>&nbsp;</td>
+						</td-->
+						<td height="100">&nbsp;</td>
 						<td valign="top">
 						
 							</td>
 					</tr>
 					<tr>
-						<td height="40" colspan="4"><table width="100%" height="1"
+						<td height="100" colspan="4"><table width="100%" height="1"
 								border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
 								<tr>
 									<td></td>
 								</tr>
 							</table></td>
 					</tr>
+					
 					<tr>
 						<td width="2%">&nbsp;</td>
 						<td width="51%" class="left_txt"><img

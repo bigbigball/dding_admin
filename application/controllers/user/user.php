@@ -17,7 +17,7 @@ class User extends MY_Controller {
 	    //载入分页类
 	    $this->load->library('pagination');
 	    //每页显示数量
-	    $perPage = 1;
+	    $perPage = 10;
 	    
 	    //配置项设置
 	    //controller的url
@@ -72,13 +72,15 @@ class User extends MY_Controller {
 			$brief = $this->input->post ( 'brief' );
 			$integral = $this->input->post ( 'integral' );
 			$is_leader = $this->input->post ( 'is_leader' );
+			$photo = $this->input->post ( 'photo' );
 			
 			$data = array (
 					'user_name' => $user_name,
 					'mobile' => $mobile,
 					'brief' => $brief,
 					'integral' => $integral,
-					'is_leader' => $is_leader
+					'is_leader' => $is_leader,
+					'photo' => $photo,
 			);
 			
 			$data ['user'] = $this->user->updateUser ( $id, $data );
@@ -91,6 +93,7 @@ class User extends MY_Controller {
 			$brief = $this->input->post ( 'brief' );
 			$integral = $this->input->post ( 'integral' );
 			$is_leader = $this->input->post ( 'is_leader' );
+			$photo = $this->input->post ( 'photo' );
 			//error($is_leader);
 			
 			$user = array (
@@ -99,7 +102,8 @@ class User extends MY_Controller {
 					'mobile' => $mobile,
 					'brief' => $brief,
 					'integral' => $integral,
-					'is_leader' => $is_leader
+					'is_leader' => $is_leader,
+					'photo' => $photo,
 			);
 			$data['user'][0] = $user;
 			

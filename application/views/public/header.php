@@ -21,7 +21,8 @@ function logout(){
         <td width="74%" height="38" class="admin_txt">
         管理员： <?php echo $this->session->userdata('username'); ?></td>
         
-        <td width="22%"><a href="javascript:parent.location.href='<?php echo site_url().'/login/login/login_out'; ?>'" onClick="return confirm('确定要退出吗？');"><img src="<?php echo base_url().'style/' ?>images/out.gif" alt="安全退出" width="46" height="20" border="0"></a></td>
+        <td width="22%">
+        <a href="javascript:parent.location.href='<?php echo site_url().'/login/login/login_out'; ?>';alert('退出成功！');" onClick="return confirm('确定要退出吗？');"><img src="<?php echo base_url().'style/' ?>images/out.gif" alt="安全退出" width="46" height="20" border="0"></a></td>
         <td width="4%">&nbsp;</td>
       </tr>
       <tr>

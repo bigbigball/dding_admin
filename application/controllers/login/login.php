@@ -90,7 +90,12 @@ class Login extends CI_Controller{
 	 */
 	public function login_out(){
 		$this->session->sess_destroy();
-		success('login/login','退出成功');
+		
+		$username = $this->session->userdata('username');
+		$id = $this->session->userdata('id');
+		if(!$username || !$id){
+			redirect('login/login');
+		}
 	}
 	
 }

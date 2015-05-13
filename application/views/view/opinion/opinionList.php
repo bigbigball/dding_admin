@@ -99,7 +99,7 @@
 								<tr class="tr">
 									
 									<td class="td_center"><a href="<?php echo site_url().'/view/opinion/editOpinion/'.$v['id'] ?>">
-									                      <?php $view_str=mb_substr(strip_tags($v['view']),0,20); 
+									                      <?php $view_str=mb_substr(trim(strip_tags($v['view'])),0,20); 
 									                            if(mb_strlen($view_str)>19) $view_str .= "...";
 									                            echo $view_str;?></a>
 									</td>

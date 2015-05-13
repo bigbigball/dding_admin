@@ -87,19 +87,31 @@
 								class="list_table fs">
 								<tr>
 									
-									<th width="220">用户名</th>
-									<th width="150">发表时间</th>
-									<th width="180">审核状态</th>
+									<th width="300">用户评论</th>
+									<th width="300">评论观点</th>
+									<th width="150">评论人</th>
+									<th width="180">发表时间</th>
 									<th>操作</th>
 								</tr>
 								<?php foreach ($comment as $v): ?>
 								<tr class="tr">
 									
-									<td class="td_center"><?php echo $v['owner_id']?></td>
+									<td class="td_center"><a href="<?php echo site_url().'/view/comment/editComment/'.$v['id']?>">
+									                      <?php $content_str = mb_substr(trim(strip_tags($v['content'])), 0,20);
+									                            if(mb_strlen($content_str)>19) $content_str .= "...";
+									                              echo $content_str;?>
+									                      </a>
+									</td>
+									<td class="td_center"><a href="<?php echo site_url().'/view/opinion/editOpinion/'.$v['opinion_id'] ?>">
+									                      <?php $view_str=mb_substr(trim(strip_tags($v['view'])),0,20); 
+									                            if(mb_strlen($view_str)>19) $view_str .= "...";
+									                              echo $view_str;?>
+									                      </a>
+									</td>
+									<td class="td_center"><?php echo $v['target']?></td>
 									<td class="td_center"><?php echo date('m-d-y', $v['create_time'])?></td>
-									<td class="td_center"><?php echo $v['status']?></td>
 									<td class="td_center">
-									【<a class="link-update" href="<?php echo site_url().'/view/comment/editComment/'.$v['id'] ?>">审核</a>】
+									【<a class="link-update" href="<?php echo site_url().'/view/comment/editComment/'.$v['id'] ?>">修改</a>】
 									&nbsp;&nbsp;&nbsp;&nbsp;
 										【<a class="link-del" href="<?php echo site_url().'/view/comment/delComment/'.$v['id'] ?>">删除</a>】
 									</td>

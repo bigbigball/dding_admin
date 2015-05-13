@@ -16,13 +16,8 @@ $config = array(
 
 	'comment' => array( //评论检测
 		array(
-			'field' => 'status',
-			'label' => '审核状态',
-			'rules' => 'required',
-		),
-		array(
 			'field' => 'content',
-			'label' => '评论',
+			'label' => '用户评论',
 			'rules' => 'required',
 		),
 	),

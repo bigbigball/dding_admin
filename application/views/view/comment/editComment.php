@@ -59,7 +59,7 @@ span{
 				</td>
 				<td style="font-size: 12px" valign="middle"
 					background="<?php echo base_url().'style/' ?>images/content-bg.gif">
-					<b>您当前位置：</b>观点评论管理>>评论审核
+					<b>您当前位置：</b>观点评论管理>>评论修改
 				</td>
 				<td width="17" valign="top"
 					background="<?php echo base_url().'style/' ?>images/main_rightbg.gif">
@@ -87,16 +87,13 @@ span{
 									<table class="form_table pt15 pb15" width="100%" border="0"
 										cellpadding="0" cellspacing="0">
 										<tr>
-											<td class="td_right fs">用户：</td>
+											<td class="td_right fs">评论人：</td>
 											<td class="">
 											<input type="hidden" name="id" value="<?php echo $comment[0]['id'] ?>"/>
-											<input type="hidden" name="target_id" value="<?php echo $comment[0]['target_id'] ?>"/>
-											<input type="hidden" name="create_time" value="<?php echo $comment[0]['create_time'] ?>"/>
-											
-											<input type="text" name="owner_id" class="input-text lh30" readonly="true"
-											       size="40" value="<?php echo $comment[0]['owner_id']?>" />
+											<input type="text" name="target" class="input-text lh30" readonly
+											       size="40" value="<?php echo $comment[0]['target']?>" />
 												
-												<?php echo form_error('owner_id','<span>','</span>')?>
+												<?php echo form_error('target','<span>','</span>')?>
 												
 											</td>
 											<td></td>
@@ -104,25 +101,35 @@ span{
 										</tr>
 										
 										<tr>
-									       <td class="td_right fs">审核状态：</td>
-									       <td class="fs">
-									       <input type="radio" name="status" value="0" <?php if(0==$comment[0]['status']) echo set_radio('status','0', TRUE); else echo set_radio('status','0')?>/> 未审核&nbsp;&nbsp;&nbsp;&nbsp;
-									       <input type="radio" name="status" value="1" <?php if(1==$comment[0]['status']) echo set_radio('status','1', TRUE); else echo set_radio('status','1')?>/> 已审核
-									       </td>
-								       </tr>
-								       
-										<tr>
-											<td class="td_right fs">观点：</td>
+											<td class="td_right fs">评论时间：</td>
 											<td class="">
-											<input type="text" name="opinion_id" readonly="true"
-												class="input-text lh30" size="40" value="<?php echo $comment[0]['opinion_id'] ?>" />
-											<?php echo form_error('opinion_id','<span>','</span>')?>
+											<input type="text" name="create_time" class="input-text lh30" readonly
+											       size="40" value="<?php echo date('m-d-y H:i:s', $comment[0]['create_time'])?>" />
+												<?php echo form_error('create_time','<span>','</span>')?>	
+											</td>
+											<td></td>
+										</tr>
+												       
+										<tr>
+											<td class="td_right fs">评论观点：</td>
+											<td class="">											
+											<div style="overflow: auto; width: 800px; height: 150px;
+											            border: 1px solid #bac7d2;
+	                                                    background: #f7fcfe;/* #f7fcfe #f3fafd*/
+	                                                    border-radius: 2px;
+                                                        scrollbar-face-color: #CBDDF1;scrollbar-highlight-color: #547CBB;
+                                                        scrollbar-shadow-color: #547CBB;scrollbar-3dlight-color: #ffffff;
+                                                        scrollbar-arrow-color:  #547CBB;scrollbar-track-color: #FFFFFF;
+                                                        scrollbar-darkshadow-color: #FFFFFF;"> 
+											<?php echo $comment[0]['view'] ?>
+											</div>
+											<?php echo form_error('view','<span>','</span>')?>
 											</td>											
 										</tr>
 										
 								<tr>
-									<td class="td_right fs">评论：</td>
-									<td class=""><textarea name="content" id="content" cols="30" rows="30"
+									<td class="td_right fs">评论内容：</td>
+									<td class=""><textarea name="content" id="content" cols="30" rows="20"
 											class="textarea"><?php echo $comment[0]['content'] ?></textarea>
 											<?php echo form_error('content','<span>','</span>')?>
 											</td>
@@ -133,8 +140,8 @@ span{
 									<td class="">
 									
 									<input type="submit" name="button" class="btn btn82 btn_save2 fs" value="修改"> 
-										
-									<input type="reset" name="button" class="btn btn82 btn_res fs" value="重置">
+									
+									&nbsp;&nbsp;&nbsp;
 									<a href="<?php echo site_url().'/view/comment/commentList'; ?>">
 									<input type="button" name="button" class="btn btn82 btn_config fs" value="返回">
 									</a>

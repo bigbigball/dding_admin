@@ -33,7 +33,7 @@ body {
         <ul class="MM">
           
           <li><a href="<?php echo site_url().'/view/opinion/opinionList'; ?>" target="main">观点管理</a></li>
-          <!--  --li><a href="<?php echo site_url().'/view/comment/commentList'; ?>" target="main">评论管理</a></li-->
+          <li><a href="<?php echo site_url().'/view/comment/commentList'; ?>" target="main">评论管理</a></li>
           <li></li>
           <li></li>
         </ul>

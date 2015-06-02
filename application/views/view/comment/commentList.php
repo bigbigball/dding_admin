@@ -90,7 +90,7 @@
 									<th width="300">用户评论</th>
 									<th width="300">评论观点</th>
 									<th width="150">评论人</th>
-									<th width="180">发表时间</th>
+									<th width="100">发表时间</th>
 									<th>操作</th>
 								</tr>
 								<?php foreach ($comment as $v): ?>

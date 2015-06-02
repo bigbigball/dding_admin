@@ -73,7 +73,7 @@ window.attachEvent("onload", correctPNG);
 												<td height="149">&nbsp;</td>
 											</tr>
 											<tr>
-												<td height="80" align="right" valign="top"><img
+												<td height="80" align="center" valign="top"><img
 													src="<?php echo base_url().'style/' ?>images/logo.png"
 													width="279" height="68"></td>
 											</tr>
@@ -83,17 +83,17 @@ window.attachEvent("onload", correctPNG);
 														<tr>
 															<td width="35%">&nbsp;</td>
 															<td height="25" colspan="2" class="left_txt"><p>1-
-																	地区商家信息网门户站建立的首选方案...</p></td>
+																	门锁是智能家居的第一“入口”...</p></td>
 														</tr>
 														<tr>
 															<td>&nbsp;</td>
 															<td height="25" colspan="2" class="left_txt"><p>2-
-																	一站通式的整合方式，方便用户使用...</p></td>
+																	用做手表的态度做门锁...</p></td>
 														</tr>
 														<tr>
 															<td>&nbsp;</td>
 															<td height="25" colspan="2" class="left_txt"><p>3-
-																	强大的后台系统，管理内容易如反掌...</p></td>
+																	支持密码指纹开锁及管理...</p></td>
 														</tr>
 														<tr>
 															<td>&nbsp;</td>
@@ -185,7 +185,7 @@ window.attachEvent("onload", correctPNG);
 					cellpadding="0" class="login-buttom-bg">
 					<tr>
 						<td align="center"><span class="login-buttom-txt">Copyright &copy;
-								2009-2010 www.mycodes.net</span></td>
+								丁盯智能 www.dding.net</span></td>
 					</tr>
 				</table></td>
 		</tr>

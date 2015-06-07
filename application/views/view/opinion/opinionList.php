@@ -87,12 +87,13 @@
 								class="list_table fs">
 								<tr>
 									
-									<th width="300">用户观点</th>
+									<th width="280">用户观点</th>
+									<th width="100">用户名</th>
 									<th width="130">点评设备</th>
 									<th width="100">综合评分</th>
 									<th width="100">各项评分</th>
 									<th width="150">发表时间</th>
-									<th width="180">审核状态</th>
+									<th width="100">审核状态</th>
 									<th>操作</th>
 								</tr>
 								<?php foreach ($opinion as $v): ?>
@@ -103,10 +104,11 @@
 									                            if(mb_strlen($view_str)>19) $view_str .= "...";
 									                            echo $view_str;?></a>
 									</td>
-									<td class="td_center"><?php echo $v['device']?></td>									
+									<td class="td_center"><?php echo $v['user_name']?></td>
+									<td class="td_center"><?php echo $v['device']?></td>								
 									<td class="td_center"><?php echo $v['score']?></td>
 									<td class="td_center"><?php echo $v['stars']?></td>
-									<td class="td_center"><?php echo date('m-d-y', $v['create_time'])?></td>
+									<td class="td_center"><?php echo date('Y-m-d', $v['create_time'])?></td>
 									<td class="td_center"><?php echo $v['status']?></td>
 									<td class="td_center">
 									【<a class="link-update" href="<?php echo site_url().'/view/opinion/editOpinion/'.$v['id'] ?>">审核</a>】

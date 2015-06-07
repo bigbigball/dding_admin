@@ -9,26 +9,32 @@ class Comment_model extends CI_Model{
 	}
 	//全部查询
 	public function commentList(){
-	    //联合comment和opinion表
-		$data = $this->db->select('c.id, o.view, c.opinion_id, c.target, c.status, c.content, c.create_time')
+		/*$data = $this->db->select('c.id, o.view, c.opinion_id, c.target, c.status, c.content, c.create_time')
 				         ->from('comment as c')
 				         ->join('opinion as o', 'c.opinion_id = o.id')->order_by('c.id', 'desc')->get()->result_array();
-	
-		//$data = $this->db->order_by('id', 'desc')->get('comment')->result_array();
+		$data = $this->db->order_by('id', 'desc')->get('comment')->result_array();*/
+		//联合comment、opinion和user表
+		$this->db->select("c.id, o.view, c.opinion_id, u.user_name, c.status, c.content, c.create_time");
+		$this->db->from('comment as c');
+		$this->db->join('opinion as o','o.id=c.opinion_id', 'left');
+		$this->db->join('user as u','u.id=c.owner_id', 'left');
+		$data = $this->db->order_by('c.id','desc')->get()->result_array();
+		
 		return $data;
 	}
 	//条件查询
 	public function checkComment($id){
 		//$data = $this->db->where(array('id'=>$id))->get('comment')->result_array();
-		/*
-		$data = $this->db->select('o.id, u.user_name, o.device, o.pictures, o.score, o.stars, o.view,
-				                  o.status, o.create_time, o.update_time')->from('opinion as o')
-				         ->where(array('o.id'=>$id))->join('user as u', 'o.user_id = u.id')
-		                 ->get()->result_array();
-		                 */
-		$data = $this->db->select('c.id, o.view, c.opinion_id, c.target, c.status, c.content, c.create_time')
+		/*$data = $this->db->select('c.id, o.view, c.opinion_id, c.owner_id, c.target, c.status, c.content, c.create_time')
 		->from('comment as c')->where(array('c.id'=>$id))
-		->join('opinion as o', 'c.opinion_id = o.id')->get()->result_array();
+		->join('opinion as o', 'c.opinion_id = o.id')->get()->result_array();*/
+
+		$this->db->select("c.id, o.view, c.opinion_id, u.user_name, c.status, c.content, c.create_time");
+		$this->db->from('comment as c');
+		$this->db->join('opinion as o','o.id=c.opinion_id', 'left');
+		$this->db->join('user as u','u.id=c.owner_id', 'left');
+		$this->db->where('c.id', $id);
+		$data = $this->db->get()->result_array();
 		
 		return $data;
 	}

@@ -91,7 +91,7 @@ span{
 											<td class="">
 											<input type="hidden" name="id" value="<?php echo $comment[0]['id'] ?>"/>
 											<input type="text" name="target" class="input-text lh30" readonly
-											       size="40" value="<?php echo $comment[0]['target']?>" />
+											       size="40" value="<?php echo $comment[0]['user_name']?>" />
 												
 												<?php echo form_error('target','<span>','</span>')?>
 												

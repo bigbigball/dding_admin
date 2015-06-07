@@ -94,7 +94,6 @@ class User extends MY_Controller {
 			$integral = $this->input->post ( 'integral' );
 			$is_leader = $this->input->post ( 'is_leader' );
 			$photo = $this->input->post ( 'photo' );
-			//error($is_leader);
 			
 			$user = array (
 					'id' => $id,

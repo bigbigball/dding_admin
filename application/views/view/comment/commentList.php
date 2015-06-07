@@ -108,8 +108,8 @@
 									                              echo $view_str;?>
 									                      </a>
 									</td>
-									<td class="td_center"><?php echo $v['target']?></td>
-									<td class="td_center"><?php echo date('m-d-y', $v['create_time'])?></td>
+									<td class="td_center"><?php echo $v['user_name']?></td>
+									<td class="td_center"><?php echo date('Y-m-d', $v['create_time'])?></td>
 									<td class="td_center">
 									【<a class="link-update" href="<?php echo site_url().'/view/comment/editComment/'.$v['id'] ?>">修改</a>】
 									&nbsp;&nbsp;&nbsp;&nbsp;

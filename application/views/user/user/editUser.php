@@ -99,13 +99,13 @@ span{
 										
 										<tr>
 											<td class="td_right fs">是否意见领袖：</td>
-											<td class="fs">
-									          <input type="radio" name="is_leader" value="1" <?php if(1==$user[0]['is_leader']) echo set_radio('is_leader','1', TRUE); else echo set_radio('is_leader','1')?>/> 是&nbsp;&nbsp;&nbsp;&nbsp;
-									          <input type="radio" name="is_leader" value="0" <?php if(0==$user[0]['is_leader']) echo set_radio('is_leader','0', TRUE); else echo set_radio('is_leader','0')?>/> 否
+											<td class="fs">									          
+									          <input type="radio" name="is_leader" value="1" <?php if('1'==$user[0]['is_leader']) echo 'checked'?>/> 是&nbsp;&nbsp;&nbsp;&nbsp;
+									          <input type="radio" name="is_leader" value="0" <?php if('0'==$user[0]['is_leader']) echo 'checked'?>/> 否
 									        </td>
 						
 										</tr>
-										
+																				
 										<tr>
 											<td class="td_right fs">用户积分：</td>
 											<td class=""><input type="text" name="integral"

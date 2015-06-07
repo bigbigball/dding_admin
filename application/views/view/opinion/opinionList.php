@@ -92,7 +92,7 @@
 									<th width="130">点评设备</th>
 									<th width="100">综合评分</th>
 									<th width="100">各项评分</th>
-									<th width="150">发表时间</th>
+									<th width="100">发表时间</th>
 									<th width="100">审核状态</th>
 									<th>操作</th>
 								</tr>

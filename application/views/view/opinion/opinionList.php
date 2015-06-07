@@ -93,7 +93,7 @@
 									<th width="100">综合评分</th>
 									<th width="100">各项评分</th>
 									<th width="100">发表时间</th>
-									<th width="100">审核状态</th>
+									<th width="80">审核状态</th>
 									<th>操作</th>
 								</tr>
 								<?php foreach ($opinion as $v): ?>

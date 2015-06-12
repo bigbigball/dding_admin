@@ -87,11 +87,11 @@
 								class="list_table fs">
 								<tr>
 									
-									<th width="300">用户评论</th>
-									<th width="300">评论观点</th>
-									<th width="150">评论人</th>
-									<th width="100">发表时间</th>
-									<th>操作</th>
+									<th width="30%">用户评论</th>
+									<th width="30%">评论观点</th>
+									<th width="10%">评论人</th>
+									<th width="15%">发表时间</th>
+									<th width="20%">操作</th>
 								</tr>
 								<?php foreach ($comment as $v): ?>
 								<tr class="tr">

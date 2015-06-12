@@ -104,6 +104,15 @@ span{
 											
 										</tr>
 										<tr>
+											<td class="td_right fs">联系电话：</td>
+											<td class="">
+											<input type="text" name="mobile" readonly
+												class="input-text lh30" size="40" value="<?php echo $opinion[0]['mobile'] ?>" >
+											<?php echo form_error('mobile','<span>','</span>')?>
+											</td>
+											
+										</tr>
+										<tr>
 											<td class="td_right fs">点评设备：</td>
 											<td class="">
 											<input type="text" name="device" readonly

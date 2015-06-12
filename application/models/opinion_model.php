@@ -10,7 +10,7 @@ class Opinion_model extends CI_Model{
 	//全部查询
 	public function opinionList(){
 	    //联合opinion和user表
-		$data = $this->db->select('o.id, u.user_name, o.device, o.pictures, o.score, o.stars, o.view, 
+		$data = $this->db->select('o.id, u.user_name, u.mobile, o.device, o.pictures, o.score, o.stars, o.view, 
 				                  o.status, o.create_time, o.update_time')->from('opinion as o')
 				        ->join('user as u', 'o.user_id = u.id')->order_by('o.id', 'desc')->get()->result_array();
 		return $data;
@@ -19,7 +19,7 @@ class Opinion_model extends CI_Model{
 	public function checkOpinion($id){
 		//$data = $this->db->where(array('id'=>$id))->get('opinion')->result_array();
 		
-		$data = $this->db->select('o.id, u.user_name, o.device, o.pictures, o.score, o.stars, o.view,
+		$data = $this->db->select('o.id, u.user_name, u.mobile, o.device, o.pictures, o.score, o.stars, o.view,
 				                  o.status, o.create_time, o.update_time')->from('opinion as o')
 				         ->where(array('o.id'=>$id))->join('user as u', 'o.user_id = u.id')
 		                 ->get()->result_array();

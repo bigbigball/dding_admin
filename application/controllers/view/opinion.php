@@ -39,9 +39,9 @@ class Opinion extends MY_Controller {
 		$opinion = $this->opinion->opinionList ();
 		
 		foreach($opinion as &$v){//编号转文本
-			if(0 == $v['device']) $v['device'] = "丁盯指纹锁";
-				else if(1 == $v['device']) $v['device'] = "丁盯门磁";
-					else if(2 == $v['device']) $v['device'] = "丁盯密码锁";
+			if('0' == $v['device']) $v['device'] = "丁盯指纹锁";
+				else if('1' == $v['device']) $v['device'] = "丁盯门磁";
+					else if('2' == $v['device']) $v['device'] = "丁盯密码锁";
 						else $v['device'] = "未知设备";
 			if(0 == $v['status']) $v['status'] = "未审核";
 				else if(1 == $v['status']) $v['status'] = "已审核";
@@ -58,11 +58,12 @@ class Opinion extends MY_Controller {
 		$id = $this->uri->segment ( 4 );
 		
 		$opinion = $this->opinion->checkOpinion ( $id );
+		error_log(var_export($opinion, true), 3, 'opinion_opinion');
 		
 		foreach($opinion as &$v){//编号转文本
-			if(0 == $v['device']) $v['device'] = "丁盯指纹锁";
-				else if(1 == $v['device']) $v['device'] = "丁盯门磁";
-					else if(2 == $v['device']) $v['device'] = "丁盯密码锁";
+			if('0' == $v['device']) $v['device'] = "丁盯指纹锁";
+				else if('1' == $v['device']) $v['device'] = "丁盯门磁";
+					else if('2' == $v['device']) $v['device'] = "丁盯密码锁";
 						else $v['device'] = "未知设备";
 		}
 		

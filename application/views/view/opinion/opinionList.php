@@ -86,15 +86,16 @@
 							<table width="100%" border="0" cellpadding="0" cellspacing="0"
 								class="list_table fs">
 								<tr>
-									
-									<th width="280">用户观点</th>
-									<th width="100">用户名</th>
-									<th width="130">点评设备</th>
-									<th width="100">综合评分</th>
-									<th width="100">各项评分</th>
-									<th width="100">发表时间</th>
-									<th width="80">审核状态</th>
-									<th>操作</th>
+
+									<th width="25%">用户观点</th>
+									<th width="9%">用户名</th>
+									<th width="10%">联系电话</th>
+									<th width="8%">点评设备</th>
+									<th width="6%">综合评分</th>
+									<th width="8%">各项评分</th>
+									<th width="8%">发表时间</th>
+									<th width="8%">审核状态</th>
+									<th width="18%">操作</th>
 								</tr>
 								<?php foreach ($opinion as $v): ?>
 								<tr class="tr">
@@ -105,6 +106,7 @@
 									                            echo $view_str;?></a>
 									</td>
 									<td class="td_center"><?php echo $v['user_name']?></td>
+									<td class="td_center"><?php echo $v['mobile']?></td>
 									<td class="td_center"><?php echo $v['device']?></td>								
 									<td class="td_center"><?php echo $v['score']?></td>
 									<td class="td_center"><?php echo $v['stars']?></td>

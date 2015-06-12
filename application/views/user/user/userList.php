@@ -88,11 +88,11 @@
 								class="list_table fs">
 								<tr>
 									
-									<th width="300">用户名</th>
-									<th width="180">是否意见领袖</th>
-									<th width="150">用户积分</th>
-									<th width="180">联系电话</th>								
-									<th>操作</th>
+									<th width="30%">用户名</th>
+									<th width="10%">是否意见领袖</th>
+									<th width="10%">用户积分</th>
+									<th width="20%">联系电话</th>								
+									<th width="30%">操作</th>
 								</tr>
 								<?php foreach ($user as $v): ?>
 								<tr class="tr">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2015-06-15 09:00:00
+-- Generation Time: 2015-06-15 20:14:26
 -- 服务器版本： 5.5.37-log
 -- PHP Version: 5.3.28
 
@@ -140,7 +140,7 @@ INSERT INTO `comment` (`id`, `opinion_id`, `owner_id`, `target`, `status`, `cont
 
 CREATE TABLE IF NOT EXISTS `jobs` (
 `id` int(11) NOT NULL,
-  `rank` int(11) DEFAULT NULL,
+  `rank` int(11) DEFAULT '0',
   `position` varchar(255) DEFAULT NULL,
   `type` int(11) DEFAULT NULL,
   `salary` varchar(255) DEFAULT NULL,

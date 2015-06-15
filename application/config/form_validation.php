@@ -47,4 +47,48 @@ $config = array(
     		'rules' => 'required',
     	),  
     ),
+    'jobs' => array( //观点检测
+        array(
+            'field' => 'position',
+            'label' => '招聘职位',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'salary',
+            'label' => '薪资范围',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'age',
+            'label' => '工作年限',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'education',
+            'label' => '学历程度',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'description',
+            'label' => '职位详情',
+            'rules' => 'required',
+        ),
+    ),
+    'questions' => array( //问题检测
+        array(
+            'field' => 'type',
+            'label' => '类型状态',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'question',
+            'label' => '问题',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'answer',
+            'label' => '回答',
+            'rules' => 'required',
+        ),
+    ),
 );

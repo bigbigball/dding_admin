@@ -38,6 +38,20 @@ body {
           <li></li>
         </ul>
       </div>
+      <h1 class="type"><a href="javascript:void(0)">招聘中心管理</a></h1>
+      <div class="content">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="<?php echo base_url().'style/' ?>images/menu_topline.gif" width="182" height="5" /></td>
+          </tr>
+        </table>
+        <ul class="MM">    
+          <li><a href="<?php echo site_url().'/jobs/jobs/jobsList'; ?>" target="main">招聘管理</a></li>
+          <!--  --li><a href="" target="main">积分管理</a></li-->
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <h1 class="type"><a href="javascript:void(0)">用户中心管理</a></h1>
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -47,6 +61,7 @@ body {
         </table>
         <ul class="MM">    
           <li><a href="<?php echo site_url().'/user/user/userList'; ?>" target="main">用户管理</a></li>
+          <li><a href="<?php echo site_url().'/questions/questions/questionsList'; ?>" target="main">问题管理</a></li>
           <!--  --li><a href="" target="main">积分管理</a></li-->
           <li></li>
           <li></li>

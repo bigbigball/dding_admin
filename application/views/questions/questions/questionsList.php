@@ -61,7 +61,7 @@
 				</td>
 				<td style="font-size: 12px" valign="middle"
 					background="<?php echo base_url().'style/' ?>images/content-bg.gif">
-					<b>您当前位置：</b>招聘职位管理>>职位列表
+					<b>您当前位置：</b>问题中心管理>>问题列表
 				</td>
 				<td width="17" valign="top"
 					background="<?php echo base_url().'style/' ?>images/main_rightbg.gif">
@@ -80,6 +80,16 @@
 				<td valign="middle"
 					background="<?php echo base_url().'style/' ?>images/main_leftbg.gif">&nbsp;</td>
 				<td valign="top" bgcolor="#F7F8F9">
+				
+				<div id="button" class="mt10">
+					
+					
+					
+					<a href="<?php echo site_url().'/questions/questions/addQuestions'; ?>">
+					  <input type="button" name="button" class="btn btn82 btn_add fs" value="新增">
+					</a> 
+					
+					</div>
 					
 					<div id="table" class="mt10">
 						<div class="box span10 oh">
@@ -87,35 +97,28 @@
 								class="list_table fs">
 								<tr>
 
-									<th width="25%">用户观点</th>
-									<th width="9%">用户名</th>
-									<th width="10%">联系电话</th>
-									<th width="8%">点评设备</th>
-									<th width="6%">综合评分</th>
-									<th width="8%">各项评分</th>
-									<th width="8%">发表时间</th>
-									<th width="8%">审核状态</th>
-									<th width="18%">操作</th>
+									<th width="10%">问题类型</th>
+									<th width="30%">问题</th>
+									<th width="45%">回答</th>
+									
+									<th width="15%">操作</th>
 								</tr>
-								<?php foreach ($opinion as $v): ?>
+								<?php foreach ($questions as $v): ?>
 								<tr class="tr">
 									
-									<td class="td_center"><a href="<?php echo site_url().'/view/opinion/editOpinion/'.$v['id'] ?>">
-									                      <?php $view_str=mb_substr(trim(strip_tags($v['view'])),0,20); 
-									                            if(mb_strlen($view_str)>19) $view_str .= "...";
-									                            echo $view_str;?></a>
+									<td class="td_center"><?php echo $v['type']?>
 									</td>
-									<td class="td_center"><?php echo $v['user_name']?></td>
-									<td class="td_center"><?php echo $v['mobile']?></td>
-									<td class="td_center"><?php echo $v['device']?></td>								
-									<td class="td_center"><?php echo $v['score']?></td>
-									<td class="td_center"><?php echo $v['stars']?></td>
-									<td class="td_center"><?php echo date('Y-m-d', $v['create_time'])?></td>
-									<td class="td_center"><?php echo $v['status']?></td>
 									<td class="td_center">
-									【<a class="link-update" href="<?php echo site_url().'/view/opinion/editOpinion/'.$v['id'] ?>">审核</a>】
+									<?php $qu_str=mb_substr(trim(strip_tags($v['question'])),0,25);  if(mb_strlen($qu_str)>19) $qu_str .= "..."; echo $qu_str;?>
+									</td>
+									<td class="td_center">
+									<?php $an_str=mb_substr(trim(strip_tags($v['answer'])),0,40);  if(mb_strlen($an_str)>19) $an_str .= "..."; echo $an_str;?>
+									</td>
+									
+									<td class="td_center">
+									【<a class="link-update" href="<?php echo site_url().'/questions/questions/editQuestions/'.$v['id'] ?>">修改</a>】
 									&nbsp;&nbsp;&nbsp;&nbsp;
-										【<a class="link-del" href="<?php echo site_url().'/view/opinion/delOpinion/'.$v['id'] ?>">删除</a>】
+										【<a class="link-del" href="<?php echo site_url().'/questions/questions/delQuestions/'.$v['id'] ?>">删除</a>】
 									</td>
 								</tr>
 								<?php endforeach; ?>

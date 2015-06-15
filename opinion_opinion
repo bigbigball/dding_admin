@@ -1,0 +1,80 @@
+array (
+  0 => 
+  array (
+    'id' => '28',
+    'user_name' => '',
+    'mobile' => '13801069874',
+    'device' => '',
+    'pictures' => '',
+    'score' => '10',
+    'stars' => '5,4,5,5',
+    'view' => 'ͼƬ',
+    'status' => '0',
+    'create_time' => '0',
+    'update_time' => '0000-00-00 00:00:00',
+  ),
+)array (
+  0 => 
+  array (
+    'id' => '28',
+    'user_name' => '',
+    'mobile' => '13801069874',
+    'device' => '',
+    'pictures' => '',
+    'score' => '10',
+    'stars' => '5,4,5,5',
+    'view' => 'ͼƬ',
+    'status' => '0',
+    'create_time' => '0',
+    'update_time' => '0000-00-00 00:00:00',
+  ),
+)array (
+  0 => 
+  array (
+    'id' => '26',
+    'user_name' => 'С',
+    'mobile' => '18900504437',
+    'device' => '',
+    'pictures' => '/uploads/product/1.png,/uploads/product/2.png,/uploads/product/3.png,/uploads/product/4.png,/uploads/product/5.png',
+    'score' => '9',
+    'stars' => '5,4,4,5',
+    'view' => '<p>
+ <br />
+</p>
+<p>
+ ? ? ? ',
+    'status' => '0',
+    'create_time' => '0',
+    'update_time' => '2015-05-09 22:38:54',
+  ),
+)array (
+  0 => 
+  array (
+    'id' => '32',
+    'user_name' => '18210047323',
+    'mobile' => '18210047323',
+    'device' => '',
+    'pictures' => '/uploads/product/qr.png,/uploads/product/qr1.png',
+    'score' => '9',
+    'stars' => '4,5,4,4',
+    'view' => '<p>? ? ? ? ? ? ? ? ? ?ţ',
+    'status' => '0',
+    'create_time' => '0',
+    'update_time' => '0000-00-00 00:00:00',
+  ),
+)array (
+  0 => 
+  array (
+    'id' => '32',
+    'user_name' => '18210047323',
+    'mobile' => '18210047323',
+    'device' => '',
+    'pictures' => '/uploads/product/qr.png,/uploads/product/qr1.png',
+    'score' => '9',
+    'stars' => '4,5,4,4',
+    'view' => '<p>? ? ? ? ? ? ? ? ? ?ţ',
+    'status' => '0',
+    'create_time' => '0',
+    'update_time' => '0000-00-00 00:00:00',
+  ),
+)

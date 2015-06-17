@@ -112,7 +112,7 @@
 									<?php $qu_str=mb_substr(trim(strip_tags($v['question'])),0,25);  if(mb_strlen($qu_str)>19) $qu_str .= "..."; echo $qu_str;?>
 									</td>
 									<td class="td_center">
-									<?php $an_str=mb_substr(trim(strip_tags($v['answer'])),0,40);  if(mb_strlen($an_str)>19) $an_str .= "..."; echo $an_str;?>
+									<?php $an_str=mb_substr(trim(strip_tags($v['answer'])),0,35);  if(mb_strlen($an_str)>19) $an_str .= "..."; echo $an_str;?>
 									</td>
 									
 									<td class="td_center">

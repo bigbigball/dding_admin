@@ -91,4 +91,27 @@ $config = array(
             'rules' => 'required',
         ),
     ),
+    'ne' => array( //新闻检测
+        array(
+            'field' => 'title',
+            'label' => '文章标题',
+            'rules' => 'required',
+        ),
+        
+        array(
+            'field' => 'source',
+            'label' => '文章来源',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'link',
+            'label' => '文章链接',
+            'rules' => 'required',
+        ),
+        array(
+            'field' => 'abstract',
+            'label' => '文章摘要',
+            'rules' => 'required',
+        ),
+    ),
 );

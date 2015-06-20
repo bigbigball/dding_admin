@@ -52,6 +52,20 @@ body {
           <li></li>
         </ul>
       </div>
+      <h1 class="type"><a href="javascript:void(0)">新闻中心管理</a></h1>
+      <div class="content">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="<?php echo base_url().'style/' ?>images/menu_topline.gif" width="182" height="5" /></td>
+          </tr>
+        </table>
+        <ul class="MM">    
+          <li><a href="<?php echo site_url().'/news/news/newsList'; ?>" target="main">新闻管理</a></li>
+          <!--  --li><a href="" target="main">积分管理</a></li-->
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <h1 class="type"><a href="javascript:void(0)">用户中心管理</a></h1>
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">

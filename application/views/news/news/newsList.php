@@ -109,7 +109,7 @@
 									
 									<td class="td_center"><?php echo $v['title']?> </td>
 									<td class="td_center"><?php echo $v['source']?></td>
-									<td class="td_center"><?php echo $v['link']?></td>	
+									<td class="td_center"><?php echo $v['links']?></td>	
 									<td class="td_center"><?php echo $v['rank']?></td>							
 									<td class="td_center"><?php echo date('Y-m-d', $v['ctime'])?></td>
 									<td class="td_center">

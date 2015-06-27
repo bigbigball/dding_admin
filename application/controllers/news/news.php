@@ -87,8 +87,8 @@ class News extends MY_Controller {
 	        $arr['source_image'] = $info['full_path'];
 	        $arr['create_thumb'] = FALSE;
 	        $arr['maintain_ratio'] = TRUE;
-	        $arr['width'] = 442;
-	        $arr['height'] = 264;
+	        $arr['width'] = 452;
+	        $arr['height'] = 305;
 	        	
 	        //载入缩略图类
 	        $this->load->library('image_lib', $arr);
@@ -165,8 +165,8 @@ class News extends MY_Controller {
 		    $arr['source_image'] = $info['full_path'];
 		    $arr['create_thumb'] = FALSE;
 		    $arr['maintain_ratio'] = TRUE;
-		    $arr['width'] = 442;
-		    $arr['height'] = 264;
+		    $arr['width'] = 452;
+		    $arr['height'] = 305;
 		    	
 		    //载入缩略图类
 		    $this->load->library('image_lib', $arr);

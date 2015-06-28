@@ -142,7 +142,7 @@ span{
 										
 								<tr>
 									<td class="td_right fs">文章摘要：</td>
-									<td class=""><textarea name="abstract" id="abstract" cols="30" rows="30"
+									<td class=""><textarea name="abstract" id="abstract" cols="30" rows="10"
 											class="textarea"><?php echo $news[0]['abstract'] ?></textarea>
 											<?php echo form_error('abstract','<span>','</span>')?>
 											</td>

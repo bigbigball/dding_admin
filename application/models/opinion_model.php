@@ -12,7 +12,7 @@ class Opinion_model extends CI_Model{
 	    //联合opinion和user表
 		$data = $this->db->select('o.id, u.user_name, u.mobile, o.device, o.pictures, o.score, o.stars, o.view, 
 				                  o.status, o.create_time, o.update_time')->from('opinion as o')
-				        ->join('user as u', 'o.user_id = u.id')->order_by('o.id', 'desc')->get()->result_array();
+				        ->join('user as u', 'o.user_id = u.id')->order_by('o.status', 'asc')->get()->result_array();
 		return $data;
 	}
 	//条件查询

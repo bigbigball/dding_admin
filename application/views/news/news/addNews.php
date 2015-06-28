@@ -122,10 +122,10 @@ span {
 
                                         <tr>
 											<td class="td_right fs">文章链接：</td>
-											<td class=""><input type="text" name="link"
+											<td class=""><input type="text" name="links"
 												class="input-text lh30" size="40"
-												value="<?php echo set_value('link')?>">
-												<?php echo form_error('link','<span>','</span>')?>
+												value="<?php echo set_value('links')?>">
+												<?php echo form_error('links','<span>','</span>')?>
 												</td>
 										</tr>
                                         

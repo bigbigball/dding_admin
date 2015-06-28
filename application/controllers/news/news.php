@@ -107,7 +107,7 @@ class News extends MY_Controller {
 	            'abstract' => $this->input->post ( 'abstract' ),
 	            'thumb' => $info['file_name'],
 	            'rank' => $this->input->post ( 'rank' ),
-	            'link' => $this->input->post ( 'link' )
+	            'links' => $this->input->post ( 'links' )
 	            
 	        );
 	        //p($data);die;
@@ -183,7 +183,7 @@ class News extends MY_Controller {
 			$title = $this->input->post ( 'title' );
 			$source = $this->input->post ( 'source' );
 			$ctime = time();
-			$link = $this->input->post ( 'link' );
+			$links = $this->input->post ( 'links' );
 			$rank = $this->input->post ( 'rank' );
 			$thumb = $info['file_name'];
 			$abstract = $this->input->post ( 'abstract' );
@@ -192,7 +192,7 @@ class News extends MY_Controller {
 					'title' => $title,
 					'source' => $source,
 					'ctime' => $ctime,
-					'link' => $link,
+					'links' => $links,
 					'rank' => $rank,
 					'thumb' => $thumb,
 					'abstract' => $abstract 

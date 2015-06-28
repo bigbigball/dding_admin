@@ -104,7 +104,7 @@ $config = array(
             'rules' => 'required',
         ),
         array(
-            'field' => 'link',
+            'field' => 'links',
             'label' => '文章链接',
             'rules' => 'required',
         ),

@@ -84,10 +84,10 @@ body {
 						<td width="2%">&nbsp;</td>
 						<td width="51%" class="left_txt"><img
 							src="<?php echo base_url().'style/' ?>images/icon-mail2.gif"
-							width="16" height="11"> 客户服务邮箱：215288671@qq.com
+							width="16" height="11"> 客户电话：4006-414-123
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img
 							src="<?php echo base_url().'style/' ?>images/icon-phone.gif"
-							width="17" height="14"> 官方网站：http://www.mycodes.net</td>
+							width="17" height="14"> 官方网站：http://www.dding.net</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 					</tr>

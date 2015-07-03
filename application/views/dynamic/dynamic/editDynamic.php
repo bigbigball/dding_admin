@@ -49,7 +49,7 @@ span{
 <body>
 	<link href="<?php echo base_url().'style/' ?>css/main.css"
 		rel="stylesheet" type="text/css">
-		<form action="<?php echo site_url('news/news/editArticle') ?>" class="jqtransform" method="POST"  enctype="multipart/form-data" >
+		<form action="<?php echo site_url('dynamic/dynamic/editArticle') ?>" class="jqtransform" method="POST"  enctype="multipart/form-data" >
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
 		<tbody>
 			<tr>
@@ -60,7 +60,7 @@ span{
 				</td>
 				<td style="font-size: 12px" valign="middle"
 					background="<?php echo base_url().'style/' ?>images/content-bg.gif">
-					<b>您当前位置：</b>新闻管理>>修改新闻
+					<b>您当前位置：</b>动态管理>>修改动态
 				</td>
 				<td width="17" valign="top"
 					background="<?php echo base_url().'style/' ?>images/main_rightbg.gif">
@@ -90,13 +90,13 @@ span{
 										<tr>
 											<td class="td_right fs">文章标题：</td>
 											<td class="">
-											<input type="hidden" name="id" value="<?php echo $news[0]['id'] ?>"/>
+											<input type="hidden" name="id" value="<?php echo $dynamic[0]['id'] ?>"/>
 											
-											<input type="hidden" name="create_time" value="<?php echo $news[0]['ctime'] ?>"/>
+											<input type="hidden" name="create_time" value="<?php echo $dynamic[0]['ctime'] ?>"/>
 											
 											
 											<input type="text" name="title" class="input-text lh30" 
-											       size="40" value="<?php echo $news[0]['title']?>" />
+											       size="40" value="<?php echo $dynamic[0]['title']?>" />
 												
 												<?php echo form_error('title','<span>','</span>')?>	
 											
@@ -113,39 +113,36 @@ span{
 										</tr>
 										
 										<tr>
-											<td class="td_right fs">文章来源：</td>
-											<td class=""><input type="text" name="source" class="input-text lh30" size="40"
-												value="<?php echo $news[0]['source'] ?>" />
-											<?php echo form_error('source','<span>','</span>')?>
-											</td>
-										</tr>
-										
-										<tr>
 											<td class="td_right fs">显示顺序：</td>
 											<td class="">
 											<input type="text" name="rank" placeholder="比如1,2,3..." 
-												class="input-text lh30" size="40" value="<?php echo $news[0]['rank'] ?>" >
+												class="input-text lh30" size="40" value="<?php echo $dynamic[0]['rank'] ?>" >
 											
 											</td>
 											
 										</tr>						
 										<tr>
-											<td class="td_right fs">文章链接：</td>
+											<td class="td_right fs">视频连接：</td>
 											<td class="">
-											<input type="text" name="links"
-												class="input-text lh30" size="40" value="<?php echo $news[0]['links'] ?>" >
-											<?php echo form_error('links','<span>','</span>')?>
+											<input type="text" name="video"
+												class="input-text lh30" size="40" value="<?php echo $dynamic[0]['video'] ?>" >
 											</td>
 											
 										</tr>		
-																								
+										<tr>
+											<td class="td_right fs">活动连接：</td>
+											<td class="">
+											<input type="text" name="in"
+												class="input-text lh30" size="40" value="<?php echo $dynamic[0]['in'] ?>" >
+											</td>
+											
+										</tr>														
 										
 								<tr>
-									<td class="td_right fs">文章摘要：</td>
-									<td class=""><textarea name="abstract" id="abstract" cols="30" rows="10"
-											class="textarea"><?php echo $news[0]['abstract'] ?></textarea>
-											<?php echo form_error('abstract','<span>','</span>')?>
-											</td>
+									<td class="td_right fs">活动正文：</td>
+									<td class=""><textarea name="description" id="description" cols="30" rows="30"
+											class="textarea"><?php echo $dynamic[0]['description'] ?></textarea>
+									</td>
 								</tr>						
 								       
 								<tr>
@@ -155,7 +152,7 @@ span{
 									<input type="submit" name="button" class="btn btn82 btn_save2 fs" value="修改"> 
 										
 									&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo site_url().'/news/news/newsList'; ?>">
+									<a href="<?php echo site_url().'/dynamic/dynamic/dynamicList'; ?>">
 									<input type="button" name="button" class="btn btn82 btn_config fs" value="返回">
 									</a>
 									</td>

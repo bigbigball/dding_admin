@@ -11,9 +11,10 @@ body {
 .fs {
 	font-size: 12px;
 }
-span{
-	color:red;
-	font-size:12px;
+
+span {
+	color: red;
+	font-size: 12px;
 }
 </style>
 
@@ -31,25 +32,29 @@ span{
 <script type="text/javascript"
 	src="<?php echo base_url().'style/' ?>js/common.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url().'style/' ?>ueditor/ueditor.config.js"></script>
-   <script type="text/javascript" src="<?php echo base_url().'style/' ?>ueditor/ueditor.all.js"></script>
-	
-	
+<script type="text/javascript"
+	src="<?php echo base_url().'style/' ?>ueditor/ueditor.config.js"></script>
+<script type="text/javascript"
+	src="<?php echo base_url().'style/' ?>ueditor/ueditor.all.js"></script>
+
+
 
 <script type="text/javascript">
 	    window.UEDITOR_CONFIG.UEDITOR_HOME_URL = '<?php echo base_url().'style/' ?>ueditor/'; 
 	    window.onload = function(){
 	    	window.UEDITOR_CONFIG.initialFrameWidth = 800;
-	    	window.UEDITOR_CONFIG.initialFrameHeight = 250;
+	    	window.UEDITOR_CONFIG.initialFrameHeight = 320;
 	    	UE.getEditor('description');  
 	    }
 	</script>
 
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
 <body>
 	<link href="<?php echo base_url().'style/' ?>css/main.css"
 		rel="stylesheet" type="text/css">
-		<form action="<?php echo site_url('news/news/editArticle') ?>" class="jqtransform" method="POST"  enctype="multipart/form-data" >
+		<form action="<?php echo site_url('dynamic/dynamic/addArticle') ?>"
+									class="jqtransform" method="POST" enctype="multipart/form-data">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
 		<tbody>
 			<tr>
@@ -60,7 +65,7 @@ span{
 				</td>
 				<td style="font-size: 12px" valign="middle"
 					background="<?php echo base_url().'style/' ?>images/content-bg.gif">
-					<b>您当前位置：</b>新闻管理>>修改新闻
+					<b>您当前位置：</b>动态管理>>添加动态
 				</td>
 				<td width="17" valign="top"
 					background="<?php echo base_url().'style/' ?>images/main_rightbg.gif">
@@ -80,94 +85,79 @@ span{
 					background="<?php echo base_url().'style/' ?>images/main_leftbg.gif">&nbsp;</td>
 				<td valign="top" bgcolor="#F7F8F9">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
-
-						
-							<tr>
-								<td colspan="4">
+						<tr>
+							<td colspan="4">
 								
 									<table class="form_table pt15 pb15" width="100%" border="0"
 										cellpadding="0" cellspacing="0">
 										<tr>
 											<td class="td_right fs">文章标题：</td>
-											<td class="">
-											<input type="hidden" name="id" value="<?php echo $news[0]['id'] ?>"/>
-											
-											<input type="hidden" name="create_time" value="<?php echo $news[0]['ctime'] ?>"/>
-											
-											
-											<input type="text" name="title" class="input-text lh30" 
-											       size="40" value="<?php echo $news[0]['title']?>" />
-												
-												<?php echo form_error('title','<span>','</span>')?>	
-											
+											<td class=""><input type="text" name="title" class="input-text lh30" size="40"
+												value="<?php echo set_value('title')?>" />
+												<?php echo form_error('title','<span>','</span>')?>		
 											</td>
 											<td></td>
-											
 										</tr>
-										
 										<tr>
 											<td class="td_right fs">文章缩略图：</td>
-											<td class=""><input type="file" name="thumb" />
-											
+											<td class=""><input type="file" name="thumb" />											
 											</td>
 										</tr>
-										
+										<!-- 
 										<tr>
-											<td class="td_right fs">文章来源：</td>
-											<td class=""><input type="text" name="source" class="input-text lh30" size="40"
-												value="<?php echo $news[0]['source'] ?>" />
-											<?php echo form_error('source','<span>','</span>')?>
+											<td class="td_right fs">文章内容图：</td>
+											<td class=""><input type="file" name="pic" />											
 											</td>
 										</tr>
-										
+										 -->
 										<tr>
-											<td class="td_right fs">显示顺序：</td>
-											<td class="">
-											<input type="text" name="rank" placeholder="比如1,2,3..." 
-												class="input-text lh30" size="40" value="<?php echo $news[0]['rank'] ?>" >
-											
-											</td>
-											
-										</tr>						
+											<td class="td_right fs">显示位置：</td>
+											<td class=""><input type="text" name="rank"
+												placeholder="比如1,2,3..." class="input-text lh30" size="40"
+												value="<?php echo set_value('rank')?>">
+												</td>
+										</tr>
+
+                                        <tr>
+											<td class="td_right fs">视频地址：</td>
+											<td class=""><input type="text" name="video"
+												class="input-text lh30" size="40"
+												value="<?php echo set_value('video')?>">
+												</td>
+										</tr>
 										<tr>
-											<td class="td_right fs">文章链接：</td>
-											<td class="">
-											<input type="text" name="links"
-												class="input-text lh30" size="40" value="<?php echo $news[0]['links'] ?>" >
-											<?php echo form_error('links','<span>','</span>')?>
-											</td>
-											
-										</tr>		
-																								
-										
-								<tr>
-									<td class="td_right fs">文章摘要：</td>
-									<td class=""><textarea name="abstract" id="abstract" cols="30" rows="10"
-											class="textarea"><?php echo $news[0]['abstract'] ?></textarea>
-											<?php echo form_error('abstract','<span>','</span>')?>
-											</td>
-								</tr>						
-								       
-								<tr>
-									<td class="td_right">&nbsp;</td>
-									<td class="">
-									
-									<input type="submit" name="button" class="btn btn82 btn_save2 fs" value="修改"> 
-										
-									&nbsp;&nbsp;&nbsp;
-									<a href="<?php echo site_url().'/news/news/newsList'; ?>">
-									<input type="button" name="button" class="btn btn82 btn_config fs" value="返回">
-									</a>
-									</td>
-								</tr>						
-								
+											<td class="td_right fs">活动地址：</td>
+											<td class=""><input type="text" name="in"
+												class="input-text lh30" size="40"
+												value="<?php echo set_value('in')?>">
+												</td>
+										</tr>
+                                        
+										<tr>
+											<td class="td_right fs">活动内容：</td>
+											<td><textarea name="description" id="description"
+													style="width: 550px; height: 500px;"><?php echo set_value('description') ?></textarea>     
+			                                </td>
+										</tr>
+
+										<tr>
+											<td class="td_right">&nbsp;</td>
+											<td class=""><input type="submit" name="button"
+												class="btn btn82 btn_save2 fs" value="保存"> <input
+												type="reset" name="button" class="btn btn82 btn_res fs"
+												value="重置"> <a
+												href="<?php echo site_url().'/dynamic/dynamic/dynamicList'; ?>"> <input
+													type="button" name="button" class="btn btn82 btn_config fs"
+													value="返回">
+											</a></td>
+										</tr>
 									</table>
-									
-								</td>
-							</tr>
+								
+							</td>
+						</tr>
 
 
-						
+
 					</table>
 				</td>
 				<td

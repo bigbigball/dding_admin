@@ -114,4 +114,12 @@ $config = array(
             'rules' => 'required',
         ),
     ),
+    'dy' => array( //动态检测
+        array(
+            'field' => 'title',
+            'label' => '文章标题',
+            'rules' => 'required',
+        ),
+    
+    ),
 );

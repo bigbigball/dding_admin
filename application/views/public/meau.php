@@ -61,6 +61,7 @@ body {
         </table>
         <ul class="MM">    
           <li><a href="<?php echo site_url().'/news/news/newsList'; ?>" target="main">新闻管理</a></li>
+          <li><a href="<?php echo site_url().'/dynamic/dynamic/dynamicList'; ?>" target="main">动态管理</a></li>
           <!--  --li><a href="" target="main">积分管理</a></li-->
           <li></li>
           <li></li>

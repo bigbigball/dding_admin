@@ -90,8 +90,8 @@ class Dynamic extends MY_Controller {
 	        $arr['source_image'] = $info['full_path'];
 	        $arr['create_thumb'] = FALSE;
 	        $arr['maintain_ratio'] = TRUE;
-	        $arr['width'] = 452;
-	        $arr['height'] = 305;
+	        $arr['width'] = 790;
+	        $arr['height'] = 170;
 	        	
 	        //载入缩略图类
 	        $this->load->library('image_lib', $arr);
@@ -170,8 +170,8 @@ class Dynamic extends MY_Controller {
 		    $arr['source_image'] = $info['full_path'];
 		    $arr['create_thumb'] = FALSE;
 		    $arr['maintain_ratio'] = TRUE;
-		    $arr['width'] = 452;
-		    $arr['height'] = 305;
+		    $arr['width'] = 790;
+		    $arr['height'] = 170;
 		    	
 		    //载入缩略图类
 		    $this->load->library('image_lib', $arr);
